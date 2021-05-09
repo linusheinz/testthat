@@ -6492,7 +6492,7 @@ namespace Catch {
         static bool isSet;
         static struct sigaction oldSigActions [sizeof(signalDefs)/sizeof(SignalDefs)];
         static stack_t oldSigStack;
-        static char altStackMem[SIGSTKSZ];
+        static char altStackMem[32768];
 
         static void handleSignal( int sig ) {
             std::string name = "<unknown signal>";
